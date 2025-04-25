@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="scroll-container">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Valentina & Leonardo</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/svg+xml" href="images/wedding-icon.svg">
+	<!-- Fuente-1 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<main class="display">
+		<section class="portada slide_down">
+			<!-- Flores -->
+			<img class="flower flower__1" src="images/flower-1.svg">
+			<img class="flower flower__2" src="images/flower-2.svg">
+			<!-- codigo de portada -->
+			<span class="portada__subtitulo">NUESTRA BODA</span>
+			<img class="portada__foto" src="images/pareja.png">
+			<h1 class="portada__titulo">Valentina & Leonardo</h1>
+			<div class="portada__fecha">
+				<span class="portada__fecha__dia">SABADO</span>
+				<span class="portada__fecha__numero">15</span>
+				<span class="portada__fecha__mes">NOVIEMBRE</span>
+			</div>
+			<audio class="portada__audio" controls>
+			  <source src="audio/Unchained Melody (Remastered).mp3" type="audio/mpeg">
+			  Tu navegador no soporta el elemento de audio.
+			</audio>
+		</section>
+		<!-- Historia -->
+		<section class="historia secciones">
+			<img class="historia__imagen seccion__imagen" src="images/couple.gif">
+			<p class="historia__descripcion seccion__descripcion">
+				"Nos casamos 💍
+				Con mucha alegría queremos compartir este momento tan especial con vos.
+				Te esperamos para celebrar juntos el amor, la vida y los nuevos comienzos."
+			</p>
+		</section>
+		<!-- Ceremonia -->
+		<section class="ceremonia secciones">
+			<img class="ubicacion__imagen seccion__imagen" src="images/church.gif">
+			<h4 class="ubicacion__titulo seccion__titulo">Ceremonia</h4>
+			<div class="seccion__descripcion">
+				<span class="seccion__datos">Parroquia Nuestra Señora de Lourdes</span>
+				<span class="seccion__datos">Quilmes Oeste, Buenos Aires</span>
+				<b class="seccion__datos"> Ceremonia religiosa: 17:00 hs</b>
+			</div>
+			<button class="seccion__boton" onclick="verCeremonia()">Ver ubicacion</button>				
+		</section>
+		<!-- Recepcion -->
+		<section class="recepcion secciones">
+			<img class="historia__imagen seccion__imagen" src="images/cheers.gif" width="24px" height="24px">
+			<h4 class="historia__titulo seccion__titulo">Recepcion</h4>
+			<div class="seccion__descripcion">
+				<span class="seccion__datos">Estilo Buenos Aires Eventos</span>
+				<span class="seccion__datos">Quilmes, Buenos Aires</span>
+				<b class="seccion__datos">Recepción: 19:30 hs</b>
+			</div>
+			<button class="seccion__boton" onclick="verRecepcion()">Ver ubicacion</button>
+		</section>
+		<!-- Vestimenta -->
+		<section class="vestimenta secciones">
+			<h4 class="seccion__titulo">Vestimenta</h4>
+			<div class="vestimenta__contenedor__imagen">
+				<img class="seccion__imagen vestimenta__imagen" src="images/traje.svg">
+				<img class="seccion__imagen vestimenta__imagen" src="images/vestido.svg">
+			</div>
+			<div class="seccion__descripcion">
+				<b class="seccion__datos">Código de vestimenta: Elegante.</b>
+			<span class="seccion__datos">Sugerimos traje oscuro para ellos y vestido largo o cóctel para ellas. Por favor, evitar jeans, zapatillas o ropa informal.</span>
+			</div>
+		</section>
+		<section class="confirmacion secciones">
+			<h4 class="seccion__titulo">Confirmacion</h4>
+			<img class="seccion__imagen confirmacion__imagen" src="images/whatsapp.svg">
+			<div class="seccion__descripcion">
+				<b class="seccion__datos">¡Importante!</b>
+				Confirmar enviando un mensaje por whatsapp para poder verificar tu asistencia al evento.
+			</div>
+			<button class="seccion__boton" onclick="confirmarAsistencia()">Confirmar invitacion</button>
+		</section>
+	</main>
+	<script>
+	  function verCeremonia(){
+	  	window.open('https://maps.app.goo.gl/eiQxC5Q8YfiqMN4Z9');
+	  }	
+	  function verRecepcion(){
+	  	window.open('https://maps.app.goo.gl/bgkipk25TvvgyRRM9');
+	  }		
+	  function confirmarAsistencia() {
+	    const numero = "12345678900"; // Reemplazá con el número real (con código de país)
+	    const mensaje = "¡Hola! Confirmo mi asistencia a la boda de Sofi y Leo 🎉";
+	    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+	    window.open(url, "_blank");
+	  }
+	</script>
+	<script>
+	  document.addEventListener('DOMContentLoaded', () => {
+	    const observer = new IntersectionObserver((entries) => {
+	      entries.forEach(entry => {
+	        if (entry.isIntersecting) {
+	          entry.target.classList.add('visible');
+	        }
+	      });
+	    }, {
+	      threshold: 0.1, // Cuando al menos 10% es visible
+	    });
+
+	    document.querySelectorAll('.secciones').forEach(section => {
+	      observer.observe(section);
+	    });
+	  });
+	</script>
+</body>
+</html>

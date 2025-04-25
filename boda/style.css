@@ -1,0 +1,271 @@
+:root{
+--color-background: #fbf8f1;
+--color-primary: #ada084;
+--color-secondary: #786e5a;
+--color-tertiary: #b09356;
+--font-size-1: 15px;
+--font-size-2: 4rem; /*font-size para titulo*/
+--font-family-1: 'Tinos';
+--font-family-2: 'BDS';
+}
+
+@font-face {
+  font-family: 'BDS';
+  src: url('fonts/BDScript-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*animaciones*/
+
+.secciones {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease-out, 
+  transform 0.6s ease-out;
+}
+
+/* Clase que se aplica cuando entra en vista */
+.secciones.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*Keyframes*/
+@keyframes aparecerSlideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide_down{
+	opacity: 0;
+  transform: translateY(-20px);
+ 	animation: aparecerSlideDown 0.6s ease-out forwards;
+}
+
+/* Estilos para navegadores WebKit (Chrome, Safari, Edge) */
+.scroll-container::-webkit-scrollbar {
+  width: 12px; /* ancho de la barra */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: var(--color-background); /* color del fondo (canal) */
+  border-radius: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary); /* color de la barra (thumb) */
+  border-radius: 6px;
+  border: 3px solid var(--color-background); /* crea el efecto de padding interno */
+}
+
+.scroll-container::-webkit-scrollbar-button {
+  background-color: var(--color-primary); /* color de las flechitas (si están visibles) */
+}
+
+/* Firefox */
+.scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-background);
+}
+
+/*Terminan las animacion*/
+
+body{
+	width: 100%;
+	min-height: 100vh;
+	background: var(--color-background);
+	margin: 0;
+/*	padding: 1rem;*/
+	box-sizing: border-box;
+}
+
+*{
+	font-family: var(--font-family-1);
+	color: #2d2d2d;
+}
+
+.display {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/*Secciones*/
+
+.secciones{
+	padding: 1rem;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.seccion__imagen{
+	width: 4rem;
+	height: 4rem;
+	color: #2d2d2d;
+}
+
+.seccion__titulo{
+	font-family: var(--font-family-2);
+	font-size: 3.5rem;
+	margin: 0;
+}
+
+.seccion__descripcion{
+	width: 300px;
+	font-size: var(--font-size-1);
+	text-align: center;
+	color: var(--color-secondary);
+	margin: 1rem 0;
+}
+
+.seccion__datos{
+	font-size: var(--font-size-1);
+	color: var(--color-secondary);
+	display: block;
+}
+
+.seccion__boton{
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	background: var(--color-secondary);
+	color: var(--color-background);
+	padding: 7px 10px;
+	border-radius: 999px;
+	border: none;	
+}
+
+.seccion__boton:hover{
+	background: var(--color-tertiary);
+}
+
+/*flowers*/
+
+.flower{
+	position: absolute;
+	width: 8rem;
+}
+
+.flower__1{
+	left: -.5rem;
+	top: -.5rem;
+	transform: rotate(190deg);
+}
+
+.flower__2{
+	right: -2rem;
+	top: -1rem;
+	transform: rotate(270deg);
+}
+
+.flower__3{
+	bottom: -2rem;
+	left: -3rem;
+	transform: rotate(10deg);
+}
+
+/*portada*/
+
+.portada{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+.portada__foto{
+	margin-top: 1rem;
+	width: 300px;
+}
+
+.portada__titulo{
+	font-family: 'BDS';
+	font-size: var(--font-size-2);
+	margin: 0;
+	padding: 0 1rem;
+	text-align: center;
+}
+
+.portada__subtitulo{
+	margin-top: 2rem;
+	font-size: var(--font-size-1);
+	color: var(--color-secondary);
+}
+
+.portada__audio{
+	color: var(--color-secondary);
+	margin-top: 1rem;
+}
+
+/*portada__fecha*/
+
+.portada__fecha{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	gap: 1rem;
+}
+
+.portada__fecha__dia,.portada__fecha__mes{
+	font-size: var(--font-size-1);
+	border: 1px solid var(--color-primary);
+	border-right: none;
+	border-left: none;
+	color: var(--color-secondary);
+}
+
+.portada__fecha__dia{
+	display: inline-block;
+	width: 89.17px;
+	padding: 5px 0;
+	text-align: center;
+}
+
+.portada__fecha__mes{
+	display: inline-block;
+	width: 89.17px;
+	padding: 5px 0;
+	text-align: center;
+}
+
+.portada__fecha__numero{
+	font-size: 2.5rem;
+	color: var(--color-secondary);
+}
+
+/*modificadores*/
+
+.vestimenta__contenedor__imagen{
+	margin-bottom: 1rem;
+}
+
+.vestimenta__imagen{
+	width: 3rem;
+	height: 3rem;
+}
+
+.confirmacion__imagen{
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.confirmacion{
+	padding-bottom: 2rem;
+}
+
+@media (max-width: 500px){
+	.portada__foto{
+		width: 250px;
+	}
+	.portada__titulo{
+		font-size: clamp(3.3rem, 5vw, 4.5rem);
+		padding: 1rem;
+	}
+}
