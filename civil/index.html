@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="scroll-container">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Diego & Marisabel</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/svg+xml" href="images/wedding-icon.svg">
+	<!-- Fuente-1 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<main class="display">
+		<section class="portada slide_down">
+			<!-- codigo de portada -->
+			<img class="portada__foto" src="images/portada.jpeg">
+			<span class="portada__subtitulo">NUESTRA BODA</span>
+			<img class="portada__anillos" src="images/anillos.svg">
+			<audio class="portada__audio" controls>
+			  <source src="audio/Stephen Sanchez - Until I Found You Official Video.mp3" type="audio/mpeg">
+			  Tu navegador no soporta el elemento de audio.
+			</audio>
+		</section>
+		<!-- Historia -->
+		<section class="historia secciones">
+			<p class="historia__descripcion seccion__descripcion">
+				"Nos casamos 💍,
+				Tenemos el honor de invitarte a nuestra ceremonia civil."
+			</p>
+			<span class="portada__titulo">Diego</span>
+			<span class="portada__titulo">&</span>
+			<span class="portada__titulo">Marisabel</span>
+		</section>
+		<!-- Informacion basica -->
+		<section class="informacion secciones">
+			<div class="informacion__container container__secciones">
+				<div class="seccion__descripcion">
+					<b class="seccion__datos">Viernes</b>
+					<span class="seccion__datos numero__grande">06</span>
+					<span class="seccion__datos">de marzo</span>
+					<span class="seccion__datos">
+					<img class="hora__imagen seccion__imagen" src="images/hora.svg">	
+					08:40 hs
+					</span>
+				</div>
+				
+			</div>				
+		</section>
+		<!-- Ceremonia -->
+		<section class="ceremonia secciones">
+			<div class="ceremonia__container container__secciones">
+				<img class="ubicacion__imagen seccion__imagen" src="images/ceremonia.svg">
+				<div class="seccion__descripcion">
+					<span class="seccion__datos">Registro Civil, Av. San Martin 5197</span>
+					<span class="seccion__datos">Ezpeleta, Buenos Aires</span>
+					<b class="seccion__datos"> Ceremonia: 08:40 hs</b>
+				</div>
+				<button class="seccion__boton" onclick="verCeremonia()">Ver ubicacion</button>
+			</div>				
+		</section>
+		<!-- Recepcion -->
+		<section class="recepcion secciones">
+			<div class="recepcion__container ">
+				<img class="historia__imagen seccion__imagen" src="images/recepcion.svg" width="24px" height="24px">
+				<div class="seccion__descripcion">
+					<span class="seccion__datos">Quinta Andoain, Diagonal Lisandro de la Torre 3751</span>
+					<span class="seccion__datos">Berazategui, Buenos Aires</span>
+					<b class="seccion__datos">Recepción: 10:00 hs</b>
+				</div>
+				<button class="seccion__boton" onclick="verRecepcion()">Ver ubicacion</button>
+			</div>
+		</section>
+		<!-- Vestimenta -->
+		<section class="vestimenta secciones">
+			<div class="vestimenta__contenedor">
+				<h4 class="seccion__titulo">Vestimenta</h4>
+				<div class="vestimenta__contenedor__imagen">
+					<img class="seccion__imagen vestimenta__imagen" src="images/traje.svg">
+					<img class="seccion__imagen vestimenta__imagen" src="images/vestido.svg">
+				</div>
+				<div class="seccion__descripcion">
+					<b class="seccion__datos">Código de vestimenta: Elegante.</b>
+					<span class="seccion__datos">“Vestimenta semi-informal (de ser posible, evitar jeans).”</span>
+
+				</div>
+			</div>
+			<img class="flor flor-3" src="images/flower-3.svg">
+			<img class="flor flor-4" src="images/flower-4.svg">
+		</section>
+		<!-- Regalos -->
+		<section class="regalos secciones">
+			<div class="regalos__contenedor">
+				<h4 class="seccion__titulo">Regalos</h4>
+				<img class="seccion__imagen regalos__imagen" src="images/sobre.svg">
+				<div class="seccion__descripcion">
+					<b class="seccion__datos">LLuvia de Sobres</b>
+					<span class="seccion__datos">“La lluvia de sobre es la tradicion de regalar dinero en efectivo en un sobre el dia del evento.”</span>
+				</div>
+				<img class="seccion__imagen regalos__imagen" src="images/tarjeta.svg">
+				<div class="seccion__descripcion">
+					<b class="seccion__datos">transferencia</b>
+					<span class="seccion__datos">“No es necesario estar cerca, para hacer sentir el amor y el cariño. Si asi lo prefieres puedes hacer una transferencia.”</span>
+				</div>
+			</div>
+		</section>
+		<section class="confirmacion secciones">
+			<h4 class="seccion__titulo">Confirmacion</h4>
+			<img class="seccion__imagen confirmacion__imagen" src="images/whatsapp.svg">
+			<div class="seccion__descripcion">
+				<b class="seccion__datos">¡Importante!</b>
+				Confirmar enviando un mensaje por whatsapp para poder verificar tu asistencia al evento.
+			</div>
+			<button class="seccion__boton" onclick="confirmarAsistencia()">Confirmar invitacion</button>
+		</section>
+	</main>
+	<script>
+	  function verCeremonia(){
+	  	window.open('https://www.google.com/maps/place/Av.+San+Mart%C3%ADn+5197,+B1882+Ezpeleta,+Provincia+de+Buenos+Aires/@-34.7511625,-58.2370362,16.75z/data=!4m6!3m5!1s0x95a32ee1be6aeca9:0x2d449e14b695ede9!8m2!3d-34.751004!4d-58.2366322!16s%2Fg%2F11h6dcdsk9?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D');
+	  }	
+	  function verRecepcion(){
+	  	window.open('https://www.google.com/maps/place/Diag.+Lisandro+de+la+Torre+3751,+B1861+Platanos,+Provincia+de+Buenos+Aires/@-34.7773208,-58.1839296,17z/data=!3m1!4b1!4m6!3m5!1s0x95a326188dc0a0f3:0x465b3f1146656846!8m2!3d-34.7773208!4d-58.1813547!16s%2Fg%2F11h0br3n0z?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D');
+	  }		
+	  function confirmarAsistencia() {
+	    const numero = "1131415511"; // Reemplazá con el número real (con código de país)
+	    const mensaje = "¡Hola! Confirmo mi asistencia a el civil de Diego y Marisabel 🎉";
+	    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+	    window.open(url, "_blank");
+	  }
+	</script>
+	<script>
+	  document.addEventListener('DOMContentLoaded', () => {
+	    const observer = new IntersectionObserver((entries) => {
+	      entries.forEach(entry => {
+	        if (entry.isIntersecting) {
+	          entry.target.classList.add('visible');
+	        }
+	      });
+	    }, {
+	      threshold: 0.1, // Cuando al menos 10% es visible
+	    });
+
+	    document.querySelectorAll('.secciones').forEach(section => {
+	      observer.observe(section);
+	    });
+	  });
+	</script>
+</body>
+</html>
